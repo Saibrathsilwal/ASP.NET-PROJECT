@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to GSLLS</h1>
+    <p>GSLLS provides a personalized language learning experience through quizzes and games. Our platform is designed to help you improve your language skills in a fun and interactive way.</p>
+    <p>Get started by exploring our <a asp-controller="Languages" asp-action="Index">Languages</a> or testing your knowledge with our <a asp-controller="Quizzes" asp-action="Index">Quizzes</a>.</p>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>
+            <a asp-action="Create" asp-controller="Languages">Create New Language</a>
+        </p>
+        <p>
+            <a asp-action="Create" asp-controller="Quizzes">Create New Quiz</a>
+        </p>
+    }
+</div>
